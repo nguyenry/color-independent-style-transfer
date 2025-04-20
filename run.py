@@ -80,7 +80,7 @@ with tf.Session() as sess:
     styled_image = skimage.io.imread(FLAGS.styled) / 255.0
     styled_image = styled_image.reshape((1, 338, 600, 3))
 
-    combined_rbg_ = sess.run(combined_rbg, feed_dict={original: original_image, styled: styled_image})
+    # combined_rbg_ = sess.run(combined_rbg, feed_dict={original: original_image, styled: styled_image})
 
     summary_image = concat_images(original_image.reshape((338, 600, 3)), styled_image.reshape((338, 600, 3)))
     summary_image = concat_images(summary_image, combined_rbg_[0])
